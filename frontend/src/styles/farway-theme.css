@@ -1,0 +1,135 @@
+/* 远行 Farway · 极简浅色主题（墨绿强调） */
+
+:root {
+  --fw-bg: #f6f5f0;
+  --fw-bg-soft: #efede6;
+  --fw-surface: #ffffff;
+  --fw-surface-2: #fbfaf6;
+  --fw-text: #1b2420;
+  --fw-text-2: #5c675f;
+  --fw-text-3: #8a938c;
+  --fw-border: #e2dfd5;
+  --fw-accent: #0f6b4f;
+  --fw-accent-2: #1f8a67;
+  --fw-accent-soft: #e6f1ec;
+  --fw-shadow: 0 10px 30px rgba(27, 36, 32, 0.08);
+  --fw-radius: 14px;
+}
+
+html,
+body {
+  background: var(--fw-bg);
+  color: var(--fw-text);
+}
+
+body {
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--fw-bg);
+}
+
+#app {
+  min-height: 100vh;
+  background: var(--fw-bg);
+  color: var(--fw-text);
+}
+
+::selection {
+  background: #d6eadf;
+  color: var(--fw-text);
+}
+
+/* 纸感纹理：仅用 CSS，无外部图片 */
+.landing-header.section-dark {
+  background:
+    radial-gradient(1100px 520px at 18% 8%, rgba(15, 107, 79, 0.10), transparent 62%),
+    radial-gradient(900px 460px at 82% 22%, rgba(31, 138, 103, 0.08), transparent 60%),
+    linear-gradient(180deg, #fbfaf6 0%, #f4f2ea 62%, #f6f5f0 100%) !important;
+}
+
+.landing-header .presentation-title {
+  color: var(--fw-text);
+  letter-spacing: 0.12em;
+}
+
+.landing-header .presentation-subtitle {
+  color: var(--fw-text-2);
+}
+
+/* 去掉 Paper Kit 默认的黑色遮罩，浅色背景不需要 */
+.page-header .filter::after,
+.landing-header .filter::after {
+  background: transparent !important;
+}
+
+/* 强调色统一为墨绿 */
+.btn-danger,
+.btn-danger:focus,
+.btn-danger:active {
+  background: var(--fw-accent) !important;
+  border-color: var(--fw-accent) !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+.btn-danger:hover {
+  background: var(--fw-accent-2) !important;
+  border-color: var(--fw-accent-2) !important;
+}
+
+.ant-btn-primary {
+  background: var(--fw-accent) !important;
+  border-color: var(--fw-accent) !important;
+}
+
+.ant-btn-primary:hover {
+  background: var(--fw-accent-2) !important;
+  border-color: var(--fw-accent-2) !important;
+}
+
+/* Ant Design 浮层在浅色背景下统一 */
+.ant-modal-content,
+.ant-select-dropdown,
+.ant-picker-dropdown,
+.ant-dropdown-menu {
+  background: #ffffff !important;
+  color: var(--fw-text);
+}
+
+.ant-message-notice-content {
+  background: #ffffff !important;
+  color: var(--fw-text) !important;
+  box-shadow: var(--fw-shadow) !important;
+}
+
+.ant-empty-description {
+  color: var(--fw-text-3) !important;
+}
+
+/* 滚动条 */
+* {
+  scrollbar-color: #c9c5b8 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #d5d2c6;
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Paper Kit 的渐变标题在浅色下对比度不足，统一为墨色 */
+.landing-header .presentation-title {
+  color: #1B2420 !important;
+  background: none !important;
+  -webkit-background-clip: border-box !important;
+  -webkit-text-fill-color: #1B2420 !important;
+  text-shadow: none !important;
+}
